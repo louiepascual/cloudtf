@@ -24,7 +24,7 @@ data "aws_subnet" "mnl_subnet" {
 
 resource "aws_security_group" "dev_sg" {
   name        = "dev_sg"
-  description = "SG for dev purposes, only allows SSH to instance"
+  description = "SG for dev purposes"
   vpc_id      = data.aws_vpc.default_vpc.id
 
   ingress {
@@ -33,6 +33,14 @@ resource "aws_security_group" "dev_sg" {
       to_port      = 22
       cidr_blocks  = var.aws_allowed_ips
       description  = "Allow SSH"
+  }
+
+  egress {
+    protocol     = -1
+    from_port    = 0
+    to_port      = 0
+    cidr_blocks  = ["0.0.0.0/0"]
+    description  = "Allow all outbound IPv4 traffic"
   }
 }
 
