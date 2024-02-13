@@ -8,12 +8,13 @@ terraform {
 }
 
 provider "digitalocean" {
-   token = var.do_token
+  token = var.do_token
 }
 
 data "digitalocean_ssh_key" "ssh_key" {
-    name = var.do_ssh_key
+  name = var.do_ssh_key
 }
+
 resource "digitalocean_volume" "chromedp_vol" {
   region                  = "sgp1"
   name                    = "chromedp-vol"
@@ -23,17 +24,17 @@ resource "digitalocean_volume" "chromedp_vol" {
 }
 
 #resource "digitalocean_droplet" "chromedp_build" {
-#    image     = "debian-12-x64"
-#    name      = "chromedp-build"
-#    region    = "sgp1"
-#    #size      = "c-16"
-#    size      = "s-4vcpu-8gb"
-#    ssh_keys  = [data.digitalocean_ssh_key.ssh_key.id]
+#  image     = "debian-12-x64"
+#  name      = "chromedp-build"
+#  region    = "sgp1"
+#  #size      = "c-16"
+#  size      = "s-4vcpu-8gb"
+#  ssh_keys  = [data.digitalocean_ssh_key.ssh_key.id]
 #}
 #
 #resource "digitalocean_volume_attachment" "chromedp_attach" {
-#	droplet_id	= digitalocean_droplet.chromedp_build.id
-#	volume_id	= digitalocean_volume.chromedp_vol.id
+#  droplet_id  = digitalocean_droplet.chromedp_build.id
+#  volume_id = digitalocean_volume.chromedp_vol.id
 #}
 #
 #output "chromedp_build" {
