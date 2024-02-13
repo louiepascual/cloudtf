@@ -15,11 +15,11 @@ data "digitalocean_ssh_key" "ssh_key" {
     name = var.do_ssh_key
 }
 resource "digitalocean_volume" "chromedp_vol" {
-  region 			          	= "sgp1"
-	name 				          	= "chromedp-vol"
-	size 				          	= 200
-	initial_filesystem_type = "ext4"
-	description				      = "contains chromedp source tree"
+  region                  = "sgp1"
+  name                    = "chromedp-vol"
+  size                    = 200
+  initial_filesystem_type = "ext4"
+  description             = "contains chromedp source tree"
 }
 
 #resource "digitalocean_droplet" "chromedp_build" {
