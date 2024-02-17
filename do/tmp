@@ -1,9 +1,0 @@
-TTEMPTS: 10
-BASE:     /mnt/chromedp_vol/
-JOBS:     6
-UPDATE:   1
-VERSION:  121.0.6167.184
-ARCH:     arm64
-TMPDIR:   /tmp/headless-shell-121.0.6167.184-arm64.ETSpX
-ARCHIVE:  /mnt/chromedp_vol/docker-headless-shell/out/headless-shell-121.0.6167.184-arm64.tar.bz2
-UPDATING /mnt/chromedp_vol/docker-headless-shell/depot_tools (Thu Feb 15 11:13:40 UTC 2024)
