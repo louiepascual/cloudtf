@@ -4,4 +4,4 @@ variable "do_token" {
 
 variable "do_ssh_key" {
     description = "SSH key to use"
-} 
+}
